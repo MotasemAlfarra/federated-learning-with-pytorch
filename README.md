@@ -1,4 +1,4 @@
-# Federated Learning with Pytorch
+# Federated Learning with PyTorch
 
 This repo contains code for training models in a federated fashion using PyTorch and Slurm. This includes simple local training, federated averaging, and personalization.
 Moreover, this repo reproduces the results of the paper "Certified Robustness in Federated Learning".
