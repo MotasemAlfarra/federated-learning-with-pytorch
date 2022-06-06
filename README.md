@@ -67,7 +67,7 @@ This file contains the configuration of the training. The parameters are:
 Note the output of the code will be saved in the `fl_rs_output` directory. You will find the tensorboard logs in `fl_rs_output/tensorboard`. The trained models for each architecture can be found in `fl_rs_output/output`. The certification result for each client can be found in `fl_rs_output/output/certify`. The certification output of this process is a txt file with the following header:
 
 ```
-"idx    label   predict    radius    correct    time"
+idx    label   predict    radius    correct    time
 ```
 
 where:
