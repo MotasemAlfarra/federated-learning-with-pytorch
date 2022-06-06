@@ -24,8 +24,8 @@ To perform local training (each client will train solely on their portion of the
 This file contains the configuration of the training. The parameters are:
 
 - `NUM_CLIENTS`: Number of clients you want to distribute the dataset on.
-- `MODEL`: The architecture to be used. Currently we only have resnet18.
-- `DATASET`: Dataset to train on. Choose either cifar10 or mnist.
+- `MODEL`: The architecture to be used. In our experiments, we only used resnet18.
+- `DATASET`: Dataset to train on. In our experiments, we only used cifar10 and mnist.
 - `TOTALEPOCHS`: Total number of training epochs.
 - `LOCALEPOCHS`: Number of local epochs performed per communication round. For local training, please set `LOCALEPOCHS=TOTALEPOCHS`
 - `AUG_METHOD`: Augmentation method to be used during training and certification.
@@ -33,6 +33,14 @@ This file contains the configuration of the training. The parameters are:
 - `STEP_SZ`: Number of steps before reducing the learning rate by a factor of 10.
 - `BATCH_SZ`: Batch size used to train each client.
 - `MAX`: Maximum number of instances for certification. To run only training without certification, place `MAX=0`.
+
+Note that there are 3 dataset choices, 2 architectures and 7 augmentation methods. In our experiments, we deployed resnet18 on either MNIST or CIFAR10. We used either nominal, rotation, translation, or affine for the augmentation. This part of the code is heavily based on the paper "DeformRS: Certifying Input Deformations with Randomized Smoothing" [*"paper"*](arxiv.org/pdf/2107.00996.pdf), [*"code"*](https://github.com/MotasemAlfarra/DeformRS)
+
+```
+dataset_choices = ['mnist', 'cifar10', 'imagenet']
+model_choices = ['resnet18', 'resnet50']
+aug_choices = ['nominal', 'gaussianFull', 'rotation', 'translation', 'affine', 'scaling_uniform', 'DCT']
+```
 
 ## Personalized/Federated Training
 
@@ -43,8 +51,8 @@ To perform Federated training combined with personalization, run
 This file contains the configuration of the training. The parameters are:
 
 - `NUM_CLIENTS`: Number of clients you want to distribute the dataset on.
-- `MODEL`: The architecture to be used. Currently we only have resnet18.
-- `DATASET`: Dataset to train on. Choose either cifar10 or mnist.
+- `MODEL`: The architecture to be used. 
+- `DATASET`: Dataset to train on. 
 - `TOTALEPOCHS`: Total number of training epochs.
 - `LOCALEPOCHS`: Number of local epochs performed per communication round. Total number of communication rounds is `TOTALEPOCHS/LOCALEPOCHS`
 - `FINETUNE_EPOCHS`: Number of epochs to perform personalization.
