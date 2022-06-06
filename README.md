@@ -34,7 +34,7 @@ This file contains the configuration of the training. The parameters are:
 - `BATCH_SZ`: Batch size used to train each client.
 - `MAX`: Maximum number of instances for certification. To run only training without certification, place `MAX=0`.
 
-Note that there are 3 dataset choices, 2 architectures and 7 augmentation methods. In our experiments, we deployed resnet18 on either MNIST or CIFAR10. We used either nominal, rotation, translation, or affine for the augmentation. This part of the code is heavily based on the paper "DeformRS: Certifying Input Deformations with Randomized Smoothing" [*"paper"*](arxiv.org/pdf/2107.00996.pdf), [*"code"*](https://github.com/MotasemAlfarra/DeformRS)
+Note that there are 3 dataset choices, 2 architectures and 7 augmentation methods. In our experiments, we deployed resnet18 on either MNIST or CIFAR10. We used either nominal, rotation, translation, or affine for the augmentation. This part of the code is heavily based on the paper "DeformRS: Certifying Input Deformations with Randomized Smoothing" [(*"paper"*](arxiv.org/pdf/2107.00996.pdf), [*"code"*)](https://github.com/MotasemAlfarra/DeformRS)
 
 ```
 dataset_choices = ['mnist', 'cifar10', 'imagenet']
